@@ -51,6 +51,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Gmail
 import com.bethwelamkenya.rhsf.icons.customicon.GoogleLogo
 import com.bethwelamkenya.rhsf.icons.customicon.Group
 import com.bethwelamkenya.rhsf.icons.customicon.Help
+import com.bethwelamkenya.rhsf.icons.customicon.Home
 import com.bethwelamkenya.rhsf.icons.customicon.HomeFilled
 import com.bethwelamkenya.rhsf.icons.customicon.Info
 import com.bethwelamkenya.rhsf.icons.customicon.Information
@@ -76,12 +77,14 @@ import com.bethwelamkenya.rhsf.icons.customicon.Password
 import com.bethwelamkenya.rhsf.icons.customicon.PlusMath
 import com.bethwelamkenya.rhsf.icons.customicon.QuestionMark
 import com.bethwelamkenya.rhsf.icons.customicon.RemoveUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.ReportCard
 import com.bethwelamkenya.rhsf.icons.customicon.RestrictionShield
 import com.bethwelamkenya.rhsf.icons.customicon.RgbCircle3
 import com.bethwelamkenya.rhsf.icons.customicon.Save
 import com.bethwelamkenya.rhsf.icons.customicon.Sd
 import com.bethwelamkenya.rhsf.icons.customicon.Search
 import com.bethwelamkenya.rhsf.icons.customicon.SendFile
+import com.bethwelamkenya.rhsf.icons.customicon.Services
 import com.bethwelamkenya.rhsf.icons.customicon.Settings
 import com.bethwelamkenya.rhsf.icons.customicon.ShakePhone
 import com.bethwelamkenya.rhsf.icons.customicon.Shutdown
@@ -100,6 +103,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Themes
 import com.bethwelamkenya.rhsf.icons.customicon.Trash
 import com.bethwelamkenya.rhsf.icons.customicon.Twitter
 import com.bethwelamkenya.rhsf.icons.customicon.User
+import com.bethwelamkenya.rhsf.icons.customicon.UserMenuFemale
 import com.bethwelamkenya.rhsf.icons.customicon.UserMenuMale
 import com.bethwelamkenya.rhsf.icons.customicon.VerifiedAccount
 import com.bethwelamkenya.rhsf.icons.customicon.Visible
@@ -123,14 +127,14 @@ public val CustomIcon.AllIcons: ____KtList<ImageVector>
         DataConfiguration, DataProtection, DeleteDatabase, DeleteSign, Duplicate, Edit,
         EditCalendar, EditUserMale, Exit, Expand, ExpandArrow, Facebook, FacebookNew, FilledChat,
         FilledFilter, FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting,
-        GenericSorting2, Geography, Github, Gmail, GoogleLogo, Group, Help, HomeFilled, Info,
+        GenericSorting2, Geography, Github, Gmail, GoogleLogo, Group, Help, Home, HomeFilled, Info,
         Information, Insert, Instagram, Invisible, Left4, LoginRoundedRight, LogoutRoundedLeft,
         Lowercase, Marker, MediumIcons, Menu, Menu2, MoreVert, MusicalNotes, NewByCopy, Note,
         NumericalSorting12, NumericalSorting21, PaintPalette, Password, PlusMath, QuestionMark,
-        RemoveUserMale, RestrictionShield, RgbCircle3, Save, Sd, Search, SendFile, Settings,
-        ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate, SortByCreationDate,
-        SortByEndDate, SortByFollowUpDate, SortByModifiedDate, SortByRecentlyViewed,
-        SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter, User, UserMenuMale,
-        VerifiedAccount, Visible, Wave, YoutubePlay)
+        RemoveUserMale, ReportCard, RestrictionShield, RgbCircle3, Save, Sd, Search, SendFile,
+        Services, Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
+        SortByCreationDate, SortByEndDate, SortByFollowUpDate, SortByModifiedDate,
+        SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter, User,
+        UserMenuFemale, UserMenuMale, VerifiedAccount, Visible, Wave, YoutubePlay)
     return __AllIcons!!
   }
