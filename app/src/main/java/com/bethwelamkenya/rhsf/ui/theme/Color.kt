@@ -34,9 +34,15 @@ val TranslucentGrey = Color(0x99AAAAAA)
 val TextBlack = Color(0xFF444444)
 
 
-val SomePurple = Color(0xFF9741E4)
-val SomeOtherPurple = Color(0xFFCBA6F0)
-val SomeLightPurple = Color(0xFFE9F2FF)
+val SomePurple = Color(0xFFa73ae5)
+//val SomePurple = Color(0xFF9741E4)
+val SomeOtherPurple = Color(0xFFE9F2FF)
+//val SomeOtherPurple = Color(0xFFCBA6F0)
+val SomeLightPurple = Color(0xFFebcbff)
+//val SomeLightPurple = Color(0xFFE9F2FF)
 val SomeDarkPurple = Color(0xFF304044)
+
+//linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #fd6d7eff 0.0%, #bee8fdff 100.0%)
+//linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #ebcbffff 0.0%, #a73ae5ff 100.0%)
 
 val BackgroundWhite = Color(0xFFE8F1FE)

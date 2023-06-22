@@ -3,6 +3,7 @@ package com.bethwelamkenya.rhsf.composables
 import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -82,7 +83,7 @@ fun LogInPage(
                             contentDescription = "Google",
                             modifier = Modifier
                                 .clip(RoundedCornerShape(10.dp))
-                                .background(color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.75F))
+//                                .background(color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.75F))
                                 .padding(10.dp)
                                 .size(30.dp)
                         )
@@ -104,7 +105,7 @@ fun LogInPage(
                             contentDescription = "Facebook",
                             modifier = Modifier
                                 .clip(RoundedCornerShape(10.dp))
-                                .background(color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.75F))
+//                                .background(color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.75F))
                                 .padding(10.dp)
                                 .size(30.dp)
                         )
@@ -154,7 +155,7 @@ fun LogInPage(
                 .align(Alignment.Center)
                 .offset(y = (-50).dp),
             shape = RoundedCornerShape(60.dp),
-            color = MaterialTheme.colorScheme.secondary,
+            color = MaterialTheme.colorScheme.tertiary,
             shadowElevation = 10.dp
         ) {
             Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
@@ -213,8 +214,11 @@ fun LogInPage(
                 Spacer(modifier = Modifier.height(10.dp))
                 CustomButton(
                     context = context,
-                    modifier = Modifier.fillMaxWidth(0.5F),
+                    modifier = Modifier.fillMaxWidth(0.5F)
+//                        .border(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5F), shape = RoundedCornerShape(10.dp))
+                    ,
                     text = "Log In",
+                    elevation = 5.dp,
                     icon = CustomIcon.LoginRoundedRight,
                     onClick = { },
                     enabled = enabled

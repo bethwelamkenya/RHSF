@@ -15,6 +15,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -177,17 +178,19 @@ fun CustomButton(
     icon: ImageVector,
     onClick: () -> Unit,
     enabled: Boolean = true,
-    height: Dp = 50.dp
+    height: Dp = 50.dp,
+    elevation: Dp = 0.dp
 ) {
     Button(
         onClick = onClick,
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.75F),
-            disabledContainerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5F)
+            containerColor = MaterialTheme.colorScheme.primary,
+            disabledContainerColor = MaterialTheme.colorScheme.tertiary
         ),
         shape = RoundedCornerShape(10.dp),
         enabled = enabled,
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = elevation, disabledElevation = elevation),
         contentPadding = PaddingValues(horizontal = 30.dp, vertical = 10.dp),
     ) {
         Image(

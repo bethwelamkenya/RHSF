@@ -338,7 +338,7 @@ fun HomePage(
     ) {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
-            containerColor = MaterialTheme.colorScheme.tertiary,
+            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
             topBar = {
                 Box(
                     modifier = Modifier.fillMaxWidth()
