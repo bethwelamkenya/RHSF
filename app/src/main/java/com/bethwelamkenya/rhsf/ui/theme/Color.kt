@@ -34,6 +34,15 @@ val TranslucentGrey = Color(0x99AAAAAA)
 val TextBlack = Color(0xFF444444)
 
 
+//val SomePurple = Color(0xFFEEEEEE)
+////val SomePurple = Color(0xFF9741E4)
+//val SomeOtherPurple = Color(0xFFE4E3DD)
+////val SomeOtherPurple = Color(0xFFCBA6F0)
+//val SomeLightPurple = Color(0xFFF1F0E8)
+////val SomeLightPurple = Color(0xFFE9F2FF)
+//val SomeDarkPurple = Color(0xFF304044)
+
+
 val SomePurple = Color(0xFFa73ae5)
 //val SomePurple = Color(0xFF9741E4)
 val SomeOtherPurple = Color(0xFFE9F2FF)
