@@ -1,6 +1,7 @@
 package com.bethwelamkenya.rhsf.composables
 
 import android.content.Context
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,6 +41,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -101,6 +104,7 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
     var searchQuery by remember {
         mutableStateOf("")
     }
+    val focusRequester = remember  { FocusRequester() }
     Box(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -139,9 +143,9 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
                 )
             },
             actions = {
-                if (isSearching) {
+                AnimatedVisibility(visible = isSearching) {
                     OutlinedTextField(
-//                                    modifier = Modifier.height(35.dp),
+                        modifier = Modifier.focusRequester(focusRequester),
                         value = searchQuery,
                         onValueChange = {
                             searchQuery = it
@@ -160,7 +164,8 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
                         shape = RoundedCornerShape(40),
                         keyboardActions = KeyboardActions(onDone = { isSearching = false }),
                     )
-                } else {
+                }
+                AnimatedVisibility(visible = !isSearching) {
                     Image(
                         CustomIcon.Search,
                         contentDescription = "Search",
@@ -169,6 +174,7 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
                             .size(30.dp)
                             .clickable {
                                 isSearching = true
+//                                focusRequester.requestFocus()
                             }
                     )
                 }
@@ -455,7 +461,7 @@ fun HomeContent() {
                 modifier = Modifier
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.secondary)
+                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
                     .clickable { }
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
@@ -472,7 +478,7 @@ fun HomeContent() {
                 modifier = Modifier
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.secondary)
+                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
                     .clickable { }
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
@@ -489,7 +495,7 @@ fun HomeContent() {
                 modifier = Modifier
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.secondary)
+                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
                     .clickable { }
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
