@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924704493619",
+    "project_id": "rhsf-aaf38",
+    "storage_bucket": "rhsf-aaf38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924704493619:android:60806769f6a1dc39b89346",
+        "android_client_info": {
+          "package_name": "com.bethwelamkenya.rhsf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924704493619-925lv7ii3em5karl0mgjlmo9v5ijp92d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYKCYH394xAGLGYKW-dQtOMxBoDfBjezg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924704493619-925lv7ii3em5karl0mgjlmo9v5ijp92d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
