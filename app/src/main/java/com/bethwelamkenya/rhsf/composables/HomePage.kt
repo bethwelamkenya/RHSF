@@ -1,6 +1,10 @@
 package com.bethwelamkenya.rhsf.composables
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,6 +23,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -41,6 +48,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
@@ -52,6 +60,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.bethwelamkenya.rhsf.MainActivity
 import com.bethwelamkenya.rhsf.R
 import com.bethwelamkenya.rhsf.icons.CustomIcon
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
@@ -71,27 +80,28 @@ import kotlinx.coroutines.launch
 fun HomePage(
     context: Context
 ) {
-    val coroutineScope = rememberCoroutineScope()
-    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    ModalNavigationDrawer(
-        drawerContent = {
-            HomeDrawerContent(
-                drawerState = drawerState,
-                coroutineScope = coroutineScope
-            )
-        },
-        drawerState = drawerState
-    ) {
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
-            topBar = { HomeTopAppBar(drawerState = drawerState, coroutineScope = coroutineScope) }
-        ) {
-            val pad = it
-//            Spacer(modifier = Modifier.height(55.dp))
-            HomeContent()
-        }
-    }
+    HomeContent(context = context)
+//    val coroutineScope = rememberCoroutineScope()
+//    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+//    ModalNavigationDrawer(
+//        drawerContent = {
+//            HomeDrawerContent(
+//                drawerState = drawerState,
+//                coroutineScope = coroutineScope
+//            )
+//        },
+//        drawerState = drawerState
+//    ) {
+//        Scaffold(
+//            modifier = Modifier.fillMaxSize(),
+//            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
+//            topBar = { HomeTopAppBar(drawerState = drawerState, coroutineScope = coroutineScope) }
+//        ) {
+//            val pad = it
+////            Spacer(modifier = Modifier.height(55.dp))
+//            HomeContent(context = context)
+//        }
+//    }
 
 }
 
@@ -104,7 +114,7 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
     var searchQuery by remember {
         mutableStateOf("")
     }
-    val focusRequester = remember  { FocusRequester() }
+    val focusRequester = remember { FocusRequester() }
     Box(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -450,19 +460,25 @@ fun HomeDrawerContent(drawerState: DrawerState, coroutineScope: CoroutineScope) 
 }
 
 @Composable
-fun HomeContent() {
+fun HomeContent(context: Context) {
+    val activity = context as Activity
     Column(modifier = Modifier.padding(top = 55.dp)) {
         Row(
-//            horizontalArrangement = Arrangement.SpaceAround,
+            modifier = Modifier,
+//             = Arrangement.SpaceAround,
             horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(
                 modifier = Modifier
+                    .weight(1F, true)
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
-                    .clickable { }
+                    .clickable {
+//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+//                        activity.startActivity(intent)
+                    }
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -476,6 +492,7 @@ fun HomeContent() {
             }
             Column(
                 modifier = Modifier
+                    .weight(1F, true)
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
@@ -493,6 +510,7 @@ fun HomeContent() {
             }
             Column(
                 modifier = Modifier
+                    .weight(1F, true)
                     .padding(10.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
@@ -516,5 +534,7 @@ fun HomeContent() {
 @Preview(name = "HomePage")
 @Composable
 private fun PreviewHomePage() {
-//    HomePage()
+    val mainActivity: Activity = MainActivity()
+    val context = mainActivity as Context
+    HomePage(context = context)
 }

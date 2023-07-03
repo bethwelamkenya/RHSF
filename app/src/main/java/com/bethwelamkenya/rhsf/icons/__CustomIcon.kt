@@ -15,7 +15,6 @@ import com.bethwelamkenya.rhsf.icons.customicon.Back
 import com.bethwelamkenya.rhsf.icons.customicon.Calendar
 import com.bethwelamkenya.rhsf.icons.customicon.Check
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
-import com.bethwelamkenya.rhsf.icons.customicon.Checkmark
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
 import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.ClearFilters
@@ -29,6 +28,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.DatabaseExport
 import com.bethwelamkenya.rhsf.icons.customicon.DatabaseRestore
 import com.bethwelamkenya.rhsf.icons.customicon.DeleteDatabase
 import com.bethwelamkenya.rhsf.icons.customicon.DeleteSign
+import com.bethwelamkenya.rhsf.icons.customicon.Dove
 import com.bethwelamkenya.rhsf.icons.customicon.Duplicate
 import com.bethwelamkenya.rhsf.icons.customicon.Edit
 import com.bethwelamkenya.rhsf.icons.customicon.EditCalendar
@@ -45,13 +45,10 @@ import com.bethwelamkenya.rhsf.icons.customicon.FontStyleFormatting
 import com.bethwelamkenya.rhsf.icons.customicon.ForgotPassword
 import com.bethwelamkenya.rhsf.icons.customicon.GenericSorting
 import com.bethwelamkenya.rhsf.icons.customicon.GenericSorting2
-import com.bethwelamkenya.rhsf.icons.customicon.Geography
 import com.bethwelamkenya.rhsf.icons.customicon.Github
 import com.bethwelamkenya.rhsf.icons.customicon.Gmail
-import com.bethwelamkenya.rhsf.icons.customicon.GoogleLogo
 import com.bethwelamkenya.rhsf.icons.customicon.Group
 import com.bethwelamkenya.rhsf.icons.customicon.Help
-import com.bethwelamkenya.rhsf.icons.customicon.Home
 import com.bethwelamkenya.rhsf.icons.customicon.HomeFilled
 import com.bethwelamkenya.rhsf.icons.customicon.Info
 import com.bethwelamkenya.rhsf.icons.customicon.Information
@@ -73,18 +70,15 @@ import com.bethwelamkenya.rhsf.icons.customicon.Note
 import com.bethwelamkenya.rhsf.icons.customicon.NumericalSorting12
 import com.bethwelamkenya.rhsf.icons.customicon.NumericalSorting21
 import com.bethwelamkenya.rhsf.icons.customicon.PaintPalette
-import com.bethwelamkenya.rhsf.icons.customicon.Password
 import com.bethwelamkenya.rhsf.icons.customicon.PlusMath
 import com.bethwelamkenya.rhsf.icons.customicon.QuestionMark
 import com.bethwelamkenya.rhsf.icons.customicon.RemoveUserMale
-import com.bethwelamkenya.rhsf.icons.customicon.ReportCard
 import com.bethwelamkenya.rhsf.icons.customicon.RestrictionShield
 import com.bethwelamkenya.rhsf.icons.customicon.RgbCircle3
 import com.bethwelamkenya.rhsf.icons.customicon.Save
 import com.bethwelamkenya.rhsf.icons.customicon.Sd
 import com.bethwelamkenya.rhsf.icons.customicon.Search
 import com.bethwelamkenya.rhsf.icons.customicon.SendFile
-import com.bethwelamkenya.rhsf.icons.customicon.Services
 import com.bethwelamkenya.rhsf.icons.customicon.Settings
 import com.bethwelamkenya.rhsf.icons.customicon.ShakePhone
 import com.bethwelamkenya.rhsf.icons.customicon.Shutdown
@@ -102,8 +96,6 @@ import com.bethwelamkenya.rhsf.icons.customicon.TalkMale
 import com.bethwelamkenya.rhsf.icons.customicon.Themes
 import com.bethwelamkenya.rhsf.icons.customicon.Trash
 import com.bethwelamkenya.rhsf.icons.customicon.Twitter
-import com.bethwelamkenya.rhsf.icons.customicon.User
-import com.bethwelamkenya.rhsf.icons.customicon.UserMenuFemale
 import com.bethwelamkenya.rhsf.icons.customicon.UserMenuMale
 import com.bethwelamkenya.rhsf.icons.customicon.VerifiedAccount
 import com.bethwelamkenya.rhsf.icons.customicon.Visible
@@ -122,19 +114,18 @@ public val CustomIcon.AllIcons: ____KtList<ImageVector>
     }
     __AllIcons= listOf(AcceptDatabase, ActivityFeed, AddDatabase, AddUserMale, AdministratorMale,
         AdminSettingsMale, AlphabeticalSorting, AlphabeticalSorting2, Archive, AttendanceMark, Back,
-        Calendar, Check, CheckedUserMale, Checkmark, CircledMenu, CircledUserMale, ClearFilters,
-        Collapse, CollapseArrow, Contacts, DatabaseExport, DatabaseRestore, DataBackup,
-        DataConfiguration, DataProtection, DeleteDatabase, DeleteSign, Duplicate, Edit,
-        EditCalendar, EditUserMale, Exit, Expand, ExpandArrow, Facebook, FacebookNew, FilledChat,
-        FilledFilter, FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting,
-        GenericSorting2, Geography, Github, Gmail, GoogleLogo, Group, Help, Home, HomeFilled, Info,
-        Information, Insert, Instagram, Invisible, Left4, LoginRoundedRight, LogoutRoundedLeft,
-        Lowercase, Marker, MediumIcons, Menu, Menu2, MoreVert, MusicalNotes, NewByCopy, Note,
-        NumericalSorting12, NumericalSorting21, PaintPalette, Password, PlusMath, QuestionMark,
-        RemoveUserMale, ReportCard, RestrictionShield, RgbCircle3, Save, Sd, Search, SendFile,
-        Services, Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
+        Calendar, Check, CheckedUserMale, CircledMenu, CircledUserMale, ClearFilters, Collapse,
+        CollapseArrow, Contacts, DatabaseExport, DatabaseRestore, DataBackup, DataConfiguration,
+        DataProtection, DeleteDatabase, DeleteSign, Dove, Duplicate, Edit, EditCalendar,
+        EditUserMale, Exit, Expand, ExpandArrow, Facebook, FacebookNew, FilledChat, FilledFilter,
+        FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting, GenericSorting2, Github,
+        Gmail, Group, Help, HomeFilled, Info, Information, Insert, Instagram, Invisible, Left4,
+        LoginRoundedRight, LogoutRoundedLeft, Lowercase, Marker, MediumIcons, Menu, Menu2, MoreVert,
+        MusicalNotes, NewByCopy, Note, NumericalSorting12, NumericalSorting21, PaintPalette,
+        PlusMath, QuestionMark, RemoveUserMale, RestrictionShield, RgbCircle3, Save, Sd, Search,
+        SendFile, Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
         SortByCreationDate, SortByEndDate, SortByFollowUpDate, SortByModifiedDate,
-        SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter, User,
-        UserMenuFemale, UserMenuMale, VerifiedAccount, Visible, Wave, YoutubePlay)
+        SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter,
+        UserMenuMale, VerifiedAccount, Visible, Wave, YoutubePlay)
     return __AllIcons!!
   }
