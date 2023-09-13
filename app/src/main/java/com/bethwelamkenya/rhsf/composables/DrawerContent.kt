@@ -53,7 +53,6 @@ import com.bethwelamkenya.rhsf.icons.customicon.Home
 import com.bethwelamkenya.rhsf.icons.customicon.Services
 import kotlinx.coroutines.CoroutineScope
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DrawerContent(
     context: Context,
@@ -126,15 +125,15 @@ fun DrawerHeader() {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Image(
-            painter = painterResource(id = R.drawable.church),
+            painter = painterResource(id = R.drawable.dove),
             contentDescription = "Church Image",
             modifier = Modifier
-                .width(75.dp)
-                .height(100.dp),
+                .width(50.dp)
+                .height(50.dp),
             contentScale = ContentScale.FillHeight
         )
         Text(
-            text = "Repentance And Holiness\nStudents Fellowship",
+            text = "Repentance And Holiness Students Fellowship",
             fontSize = 22.sp,
             fontFamily = FontFamily.Serif,
             color = Color.White,
@@ -144,7 +143,6 @@ fun DrawerHeader() {
 
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DrawerItem(
     context: Context,
