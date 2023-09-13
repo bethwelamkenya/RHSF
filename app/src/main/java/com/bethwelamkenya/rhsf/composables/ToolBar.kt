@@ -6,14 +6,18 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -38,7 +42,9 @@ import com.bethwelamkenya.rhsf.MainActivity
 import com.bethwelamkenya.rhsf.icons.CustomIcon
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
 import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.Menu
 import com.bethwelamkenya.rhsf.icons.customicon.Search
+import com.bethwelamkenya.rhsf.icons.customicon.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -47,7 +53,8 @@ import kotlinx.coroutines.launch
 fun ToolBar(
     context: Context,
     drawerState: DrawerState,
-    coroutineScope: CoroutineScope
+    coroutineScope: CoroutineScope,
+    title: String = "Home"
 ) {
     var isSearching by remember {
         mutableStateOf(false)
@@ -58,19 +65,24 @@ fun ToolBar(
     val focusRequester = remember { FocusRequester() }
     TopAppBar(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 10.dp),
         title = {
-            Text(
-                text = "Home",
-                style = MaterialTheme.typography.titleLarge
-            )
+            Row {
+                Spacer(modifier = Modifier.width(20.dp))
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.titleLarge
+                )
+            }
         },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Color.Transparent,
+            containerColor = MaterialTheme.colorScheme.background,
+//            containerColor = Color.Transparent,
         ),
         navigationIcon = {
-            Image(
-                CustomIcon.CircledMenu,
+            Icon(
+                CustomIcon.Menu,
                 contentDescription = "Menu",
                 modifier = Modifier
                     .clip(RoundedCornerShape(10.dp))
@@ -86,7 +98,7 @@ fun ToolBar(
                         }
                     }
                     .padding(5.dp)
-                    .size(35.dp)
+                    .size(28.dp)
             )
         },
         actions = {
@@ -102,7 +114,7 @@ fun ToolBar(
                     placeholder = { Text(text = "Search Query") },
                     singleLine = true,
                     leadingIcon = {
-                        Image(
+                        Icon(
                             CustomIcon.Search,
                             contentDescription = "Search",
                             modifier = Modifier.size(25.dp)
@@ -118,26 +130,26 @@ fun ToolBar(
                     contentDescription = "Search",
                     modifier = Modifier
                         .padding(5.dp)
-                        .size(30.dp)
+                        .size(28.dp)
                         .clickable {
                             isSearching = true
 //                                focusRequester.requestFocus()
                         }
                 )
             }
-            Image(
-                CustomIcon.CircledUserMale,
+            Spacer(modifier = Modifier.width(10.dp))
+            Icon(
+                CustomIcon.User,
                 contentDescription = "Search",
                 modifier = Modifier
                     .padding(5.dp)
-                    .size(35.dp)
+                    .size(28.dp)
             )
         }
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Preview(name = "ToolBar")
+@Preview(name = "ToolBar", showBackground = true)
 @Composable
 private fun PreviewToolBar() {
     val mainActivity: Activity = MainActivity()

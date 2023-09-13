@@ -52,6 +52,7 @@ import com.bethwelamkenya.rhsf.R
 import com.bethwelamkenya.rhsf.icons.CustomIcon
 import com.bethwelamkenya.rhsf.icons.customicon.Check
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.Checkmark
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
 import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.Contacts
@@ -451,7 +452,6 @@ fun HomeContent(context: Context) {
     Column(modifier = Modifier.padding(top = 55.dp)) {
         Row(
             modifier = Modifier,
-//             = Arrangement.SpaceAround,
             horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -513,7 +513,7 @@ fun HomeContent(context: Context) {
                 Text(text = "Recordings", fontWeight = FontWeight.Bold)
             }
         }
-        CustomButton(context = context, text = "Test Button", icon = CustomIcon.Check, onClick = { /*TODO*/ })
+        CustomButton(context = context, text = "Test Button", icon = CustomIcon.Checkmark, onClick = { /*TODO*/ })
     }
 
 }

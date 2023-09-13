@@ -35,9 +35,8 @@ class MainActivity : ComponentActivity() {
             val darkTheme = isSystemInDarkTheme()
             val window = this.window
 //            window.statusBarColor = 0xCBA6F0
-//            window.statusBarColor = if (darkTheme) 0XFFFFFF else 0X333333
+            window.statusBarColor = if (darkTheme) 0XFFFFFF else 0X333333
             RHSFTheme (darkTheme = darkTheme) {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -61,7 +60,8 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Scaffold(
                             modifier = Modifier.fillMaxSize(),
-                            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
+                            containerColor = MaterialTheme.colorScheme.background,
+//                            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
                             topBar = { ToolBar(context = this, drawerState = drawerState, coroutineScope = coroutineScope) }
                         ) {
                             val pad = it

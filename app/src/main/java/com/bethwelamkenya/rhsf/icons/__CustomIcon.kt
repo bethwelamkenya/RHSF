@@ -96,6 +96,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.TalkMale
 import com.bethwelamkenya.rhsf.icons.customicon.Themes
 import com.bethwelamkenya.rhsf.icons.customicon.Trash
 import com.bethwelamkenya.rhsf.icons.customicon.Twitter
+import com.bethwelamkenya.rhsf.icons.customicon.User
 import com.bethwelamkenya.rhsf.icons.customicon.UserMenuMale
 import com.bethwelamkenya.rhsf.icons.customicon.VerifiedAccount
 import com.bethwelamkenya.rhsf.icons.customicon.Visible
@@ -125,7 +126,7 @@ public val CustomIcon.AllIcons: ____KtList<ImageVector>
         PlusMath, QuestionMark, RemoveUserMale, RestrictionShield, RgbCircle3, Save, Sd, Search,
         SendFile, Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
         SortByCreationDate, SortByEndDate, SortByFollowUpDate, SortByModifiedDate,
-        SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter,
+        SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter, User,
         UserMenuMale, VerifiedAccount, Visible, Wave, YoutubePlay)
     return __AllIcons!!
   }

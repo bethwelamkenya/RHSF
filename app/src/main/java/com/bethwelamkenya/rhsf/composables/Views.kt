@@ -3,11 +3,8 @@ package com.bethwelamkenya.rhsf.composables
 import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,10 +12,10 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -29,9 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TransformedText
@@ -42,9 +37,8 @@ import androidx.compose.ui.unit.sp
 import com.bethwelamkenya.rhsf.icons.CustomIcon
 import com.bethwelamkenya.rhsf.icons.customicon.Invisible
 import com.bethwelamkenya.rhsf.icons.customicon.Visible
-import com.bethwelamkenya.rhsf.ui.theme.*
+import com.bethwelamkenya.rhsf.ui.theme.Transparent
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTextField(
     context: Context,
@@ -59,19 +53,22 @@ fun CustomTextField(
     keyboardActions: KeyboardActions = KeyboardActions(),
     leadingIcon: ImageVector? = null
 ) {
+    val containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5F)
     OutlinedTextField(
         modifier = modifier,
         value = value,
         onValueChange = { onValueChange(it) },
         singleLine = true,
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5F),
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = containerColor,
+            unfocusedContainerColor = containerColor,
+            disabledContainerColor = containerColor,
             focusedBorderColor = Transparent,
-            disabledBorderColor = Transparent,
-            errorBorderColor = Transparent,
-            unfocusedBorderColor = Transparent
+            unfocusedBorderColor = Transparent,
 //                    focusedTextColor = Color.White,
 //                    unfocusedTextColor = Color.White
+            disabledBorderColor = Transparent,
+            errorBorderColor = Transparent,
         ),
         maxLines = 1,
         shape = RoundedCornerShape(10.dp),
@@ -92,7 +89,6 @@ fun CustomTextField(
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomPasswordField(
     context: Context,
@@ -118,6 +114,7 @@ fun CustomPasswordField(
             )
         })
     }
+    val containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5F)
     OutlinedTextField(
         modifier = modifier,
         value = finalValue,
@@ -127,14 +124,16 @@ fun CustomPasswordField(
         },
         maxLines = 1,
         singleLine = true,
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5F),
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = containerColor,
+            unfocusedContainerColor = containerColor,
+            disabledContainerColor = containerColor,
             focusedBorderColor = Transparent,
-            disabledBorderColor = Transparent,
-            errorBorderColor = Transparent,
-            unfocusedBorderColor = Transparent
+            unfocusedBorderColor = Transparent,
 //                    focusedTextColor = Color.White,
 //                    unfocusedTextColor = Color.White
+            disabledBorderColor = Transparent,
+            errorBorderColor = Transparent,
         ),
         shape = RoundedCornerShape(10.dp),
         label = { Text(text = text) },
@@ -171,7 +170,7 @@ fun CustomPasswordField(
 }
 
 @Composable
-fun CustomButton(
+fun CustomButton1(
     context: Context,
     modifier: Modifier = Modifier,
     text: String,
