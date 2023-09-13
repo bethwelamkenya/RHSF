@@ -2,9 +2,6 @@ package com.bethwelamkenya.rhsf.composables
 
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,38 +20,28 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
 import androidx.compose.material3.DrawerState
-import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
-import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,6 +50,7 @@ import androidx.compose.ui.unit.sp
 import com.bethwelamkenya.rhsf.MainActivity
 import com.bethwelamkenya.rhsf.R
 import com.bethwelamkenya.rhsf.icons.CustomIcon
+import com.bethwelamkenya.rhsf.icons.customicon.Check
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
 import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
@@ -75,7 +63,6 @@ import com.bethwelamkenya.rhsf.icons.customicon.Services
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomePage(
     context: Context
@@ -200,7 +187,6 @@ fun HomeTopAppBar(drawerState: DrawerState, coroutineScope: CoroutineScope) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeDrawerContent(drawerState: DrawerState, coroutineScope: CoroutineScope) {
     ModalDrawerSheet(
@@ -527,6 +513,7 @@ fun HomeContent(context: Context) {
                 Text(text = "Recordings", fontWeight = FontWeight.Bold)
             }
         }
+        CustomButton(context = context, text = "Test Button", icon = CustomIcon.Check, onClick = { /*TODO*/ })
     }
 
 }
