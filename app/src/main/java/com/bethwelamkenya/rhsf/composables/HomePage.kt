@@ -53,7 +53,6 @@ import androidx.compose.ui.unit.sp
 import com.bethwelamkenya.rhsf.MainActivity
 import com.bethwelamkenya.rhsf.R
 import com.bethwelamkenya.rhsf.icons.CustomIcon
-import com.bethwelamkenya.rhsf.icons.customicon.Check
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.Checkmark
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
