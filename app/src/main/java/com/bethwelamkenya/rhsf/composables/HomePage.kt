@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -44,6 +45,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -59,8 +62,10 @@ import com.bethwelamkenya.rhsf.icons.customicon.Contacts
 import com.bethwelamkenya.rhsf.icons.customicon.Group
 import com.bethwelamkenya.rhsf.icons.customicon.Home
 import com.bethwelamkenya.rhsf.icons.customicon.HomeFilled
+import com.bethwelamkenya.rhsf.icons.customicon.Password
 import com.bethwelamkenya.rhsf.icons.customicon.Search
 import com.bethwelamkenya.rhsf.icons.customicon.Services
+import com.bethwelamkenya.rhsf.icons.customicon.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -449,6 +454,9 @@ fun HomeDrawerContent(drawerState: DrawerState, coroutineScope: CoroutineScope) 
 @Composable
 fun HomeContent(context: Context) {
     val activity = context as Activity
+    var userName by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
     Column(modifier = Modifier.padding(top = 55.dp)) {
         Row(
             modifier = Modifier,
@@ -513,12 +521,47 @@ fun HomeContent(context: Context) {
                 Text(text = "Recordings", fontWeight = FontWeight.Bold)
             }
         }
-        CustomButton(context = context, text = "Test Button", icon = CustomIcon.Checkmark, onClick = { /*TODO*/ })
+        CustomButton(
+            context = context,
+            text = "Test Button",
+            icon = CustomIcon.Checkmark,
+            onClick = { /*TODO*/ })
+        CustomInput(
+            context = context,
+            modifier = Modifier
+//                .focusRequester(focusRequester[0])
+                .fillMaxWidth(0.8F),
+            value = userName,
+            onValueChange = {
+                userName = it
+//                enabled = password.isNotEmpty() && userName.isNotEmpty()
+            },
+            text = "User Name",
+            placeHolder = "Enter Your User name",
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+//            keyboardActions = KeyboardActions(onNext = { focusRequester[1].requestFocus() }),
+            leadingIcon = CustomIcon.User
+        )
+        CustomPassword(
+            context = context,
+            modifier = Modifier
+//                .focusRequester(focusRequester[1])
+                .fillMaxWidth(0.8F),
+            value = password,
+            onValueChange = {
+                password = it
+//                enabled = password.isNotEmpty() && userName.isNotEmpty()
+            },
+            text = "Password",
+            placeHolder = "Enter Your Password",
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            leadingIcon = CustomIcon.Password
+        )
     }
 
 }
 
-@Preview(name = "HomePage")
+@Preview(name = "HomePage", showBackground = true)
 @Composable
 private fun PreviewHomePage() {
     val mainActivity: Activity = MainActivity()

@@ -16,26 +16,28 @@ public val CustomIcon.Search: ImageVector
         if (_search != null) {
             return _search!!
         }
-        _search = Builder(name = "Search", defaultWidth = 30.0.dp, defaultHeight = 30.0.dp,
-                viewportWidth = 30.0f, viewportHeight = 30.0f).apply {
+        _search = Builder(name = "Search", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = NonZero) {
-                moveTo(13.0f, 3.0f)
-                curveTo(7.489f, 3.0f, 3.0f, 7.489f, 3.0f, 13.0f)
-                curveTo(3.0f, 18.511f, 7.489f, 23.0f, 13.0f, 23.0f)
-                curveTo(15.3965f, 23.0f, 17.5974f, 22.149f, 19.3223f, 20.7363f)
-                lineTo(25.293f, 26.707f)
-                arcTo(1.0001f, 1.0001f, 0.0f, true, false, 26.707f, 25.293f)
-                lineTo(20.7363f, 19.3223f)
-                curveTo(22.149f, 17.5974f, 23.0f, 15.3965f, 23.0f, 13.0f)
-                curveTo(23.0f, 7.489f, 18.511f, 3.0f, 13.0f, 3.0f)
+                moveTo(20.5f, 6.0f)
+                curveTo(12.5096f, 6.0f, 6.0f, 12.5096f, 6.0f, 20.5f)
+                curveTo(6.0f, 28.4904f, 12.5096f, 35.0f, 20.5f, 35.0f)
+                curveTo(23.9564f, 35.0f, 27.1337f, 33.779f, 29.6289f, 31.75f)
+                lineTo(39.4395f, 41.5605f)
+                arcTo(1.5001f, 1.5001f, 0.0f, true, false, 41.5605f, 39.4395f)
+                lineTo(31.75f, 29.6289f)
+                curveTo(33.779f, 27.1337f, 35.0f, 23.9564f, 35.0f, 20.5f)
+                curveTo(35.0f, 12.5096f, 28.4904f, 6.0f, 20.5f, 6.0f)
                 close()
-                moveTo(13.0f, 5.0f)
-                curveTo(17.4301f, 5.0f, 21.0f, 8.5699f, 21.0f, 13.0f)
-                curveTo(21.0f, 17.4301f, 17.4301f, 21.0f, 13.0f, 21.0f)
-                curveTo(8.5699f, 21.0f, 5.0f, 17.4301f, 5.0f, 13.0f)
-                curveTo(5.0f, 8.5699f, 8.5699f, 5.0f, 13.0f, 5.0f)
+                moveTo(20.5f, 9.0f)
+                curveTo(26.869f, 9.0f, 32.0f, 14.131f, 32.0f, 20.5f)
+                curveTo(32.0f, 23.6026f, 30.7762f, 26.4057f, 28.791f, 28.4707f)
+                arcTo(1.5001f, 1.5001f, 0.0f, false, false, 28.4707f, 28.791f)
+                curveTo(26.4057f, 30.7762f, 23.6026f, 32.0f, 20.5f, 32.0f)
+                curveTo(14.131f, 32.0f, 9.0f, 26.869f, 9.0f, 20.5f)
+                curveTo(9.0f, 14.131f, 14.131f, 9.0f, 20.5f, 9.0f)
                 close()
             }
         }

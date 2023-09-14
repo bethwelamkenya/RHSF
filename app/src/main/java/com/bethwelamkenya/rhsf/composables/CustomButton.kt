@@ -58,8 +58,8 @@ fun CustomButton(
             .shadow(elevation = elevation, shape = RoundedCornerShape(20.dp))
             .background(color = MaterialTheme.colorScheme.background)
             .clickable(enabled = enabled, onClick = onClick)
-            .padding(horizontal = 20.dp, vertical = 10.dp),
-        horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
+            .padding(horizontal = 5.dp, vertical = 10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
@@ -72,6 +72,7 @@ fun CustomButton(
             fontSize = 20.sp,
             textAlign = TextAlign.Center
         )
+        Spacer(modifier = Modifier.width(0.dp))
     }
 }
 
@@ -80,9 +81,15 @@ fun CustomButton(
 private fun PreviewCustomButton() {
     val mainActivity: Activity = MainActivity()
     val context = mainActivity as Context
+    var text = "Test Button"
+    var number = 0
     CustomButton(
         context = context,
-        text = "Test Button",
+        text = text,
         icon = CustomIcon.Checkmark,
-        onClick = { /*TODO*/ })
+        onClick = {
+            number++
+            text = "Test Button $number"
+        }
+    )
 }

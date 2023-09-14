@@ -15,6 +15,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Back
 import com.bethwelamkenya.rhsf.icons.customicon.Calendar
 import com.bethwelamkenya.rhsf.icons.customicon.Check
 import com.bethwelamkenya.rhsf.icons.customicon.CheckedUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.Checkmark
 import com.bethwelamkenya.rhsf.icons.customicon.CircledMenu
 import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.ClearFilters
@@ -28,6 +29,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.DatabaseExport
 import com.bethwelamkenya.rhsf.icons.customicon.DatabaseRestore
 import com.bethwelamkenya.rhsf.icons.customicon.DeleteDatabase
 import com.bethwelamkenya.rhsf.icons.customicon.DeleteSign
+import com.bethwelamkenya.rhsf.icons.customicon.Done
 import com.bethwelamkenya.rhsf.icons.customicon.Dove
 import com.bethwelamkenya.rhsf.icons.customicon.Duplicate
 import com.bethwelamkenya.rhsf.icons.customicon.Edit
@@ -36,6 +38,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.EditUserMale
 import com.bethwelamkenya.rhsf.icons.customicon.Exit
 import com.bethwelamkenya.rhsf.icons.customicon.Expand
 import com.bethwelamkenya.rhsf.icons.customicon.ExpandArrow
+import com.bethwelamkenya.rhsf.icons.customicon.Eye
 import com.bethwelamkenya.rhsf.icons.customicon.Facebook
 import com.bethwelamkenya.rhsf.icons.customicon.FacebookNew
 import com.bethwelamkenya.rhsf.icons.customicon.FilledChat
@@ -49,6 +52,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Github
 import com.bethwelamkenya.rhsf.icons.customicon.Gmail
 import com.bethwelamkenya.rhsf.icons.customicon.Group
 import com.bethwelamkenya.rhsf.icons.customicon.Help
+import com.bethwelamkenya.rhsf.icons.customicon.Home
 import com.bethwelamkenya.rhsf.icons.customicon.HomeFilled
 import com.bethwelamkenya.rhsf.icons.customicon.Info
 import com.bethwelamkenya.rhsf.icons.customicon.Information
@@ -63,6 +67,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Marker
 import com.bethwelamkenya.rhsf.icons.customicon.MediumIcons
 import com.bethwelamkenya.rhsf.icons.customicon.Menu
 import com.bethwelamkenya.rhsf.icons.customicon.Menu2
+import com.bethwelamkenya.rhsf.icons.customicon.MenuVertical
 import com.bethwelamkenya.rhsf.icons.customicon.MoreVert
 import com.bethwelamkenya.rhsf.icons.customicon.MusicalNotes
 import com.bethwelamkenya.rhsf.icons.customicon.NewByCopy
@@ -70,6 +75,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Note
 import com.bethwelamkenya.rhsf.icons.customicon.NumericalSorting12
 import com.bethwelamkenya.rhsf.icons.customicon.NumericalSorting21
 import com.bethwelamkenya.rhsf.icons.customicon.PaintPalette
+import com.bethwelamkenya.rhsf.icons.customicon.Password
 import com.bethwelamkenya.rhsf.icons.customicon.PlusMath
 import com.bethwelamkenya.rhsf.icons.customicon.QuestionMark
 import com.bethwelamkenya.rhsf.icons.customicon.RemoveUserMale
@@ -79,6 +85,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Save
 import com.bethwelamkenya.rhsf.icons.customicon.Sd
 import com.bethwelamkenya.rhsf.icons.customicon.Search
 import com.bethwelamkenya.rhsf.icons.customicon.SendFile
+import com.bethwelamkenya.rhsf.icons.customicon.Services
 import com.bethwelamkenya.rhsf.icons.customicon.Settings
 import com.bethwelamkenya.rhsf.icons.customicon.ShakePhone
 import com.bethwelamkenya.rhsf.icons.customicon.Shutdown
@@ -115,16 +122,17 @@ public val CustomIcon.AllIcons: ____KtList<ImageVector>
     }
     __AllIcons= listOf(AcceptDatabase, ActivityFeed, AddDatabase, AddUserMale, AdministratorMale,
         AdminSettingsMale, AlphabeticalSorting, AlphabeticalSorting2, Archive, AttendanceMark, Back,
-        Calendar, Check, CheckedUserMale, CircledMenu, CircledUserMale, ClearFilters, Collapse,
-        CollapseArrow, Contacts, DatabaseExport, DatabaseRestore, DataBackup, DataConfiguration,
-        DataProtection, DeleteDatabase, DeleteSign, Dove, Duplicate, Edit, EditCalendar,
-        EditUserMale, Exit, Expand, ExpandArrow, Facebook, FacebookNew, FilledChat, FilledFilter,
-        FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting, GenericSorting2, Github,
-        Gmail, Group, Help, HomeFilled, Info, Information, Insert, Instagram, Invisible, Left4,
-        LoginRoundedRight, LogoutRoundedLeft, Lowercase, Marker, MediumIcons, Menu, Menu2, MoreVert,
-        MusicalNotes, NewByCopy, Note, NumericalSorting12, NumericalSorting21, PaintPalette,
-        PlusMath, QuestionMark, RemoveUserMale, RestrictionShield, RgbCircle3, Save, Sd, Search,
-        SendFile, Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
+        Calendar, Check, CheckedUserMale, Checkmark, CircledMenu, CircledUserMale, ClearFilters,
+        Collapse, CollapseArrow, Contacts, DatabaseExport, DatabaseRestore, DataBackup,
+        DataConfiguration, DataProtection, DeleteDatabase, DeleteSign, Done, Dove, Duplicate, Edit,
+        EditCalendar, EditUserMale, Exit, Expand, ExpandArrow, Eye, Facebook, FacebookNew,
+        FilledChat, FilledFilter, FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting,
+        GenericSorting2, Github, Gmail, Group, Help, Home, HomeFilled, Info, Information, Insert,
+        Instagram, Invisible, Left4, LoginRoundedRight, LogoutRoundedLeft, Lowercase, Marker,
+        MediumIcons, Menu, Menu2, MenuVertical, MoreVert, MusicalNotes, NewByCopy, Note,
+        NumericalSorting12, NumericalSorting21, PaintPalette, Password, PlusMath, QuestionMark,
+        RemoveUserMale, RestrictionShield, RgbCircle3, Save, Sd, Search, SendFile, Services,
+        Settings, ShakePhone, Shutdown, Signature, SortingAnswers, SortByClosingDate,
         SortByCreationDate, SortByEndDate, SortByFollowUpDate, SortByModifiedDate,
         SortByRecentlyViewed, SortByStartDate, Synchronize, TalkMale, Themes, Trash, Twitter, User,
         UserMenuMale, VerifiedAccount, Visible, Wave, YoutubePlay)
