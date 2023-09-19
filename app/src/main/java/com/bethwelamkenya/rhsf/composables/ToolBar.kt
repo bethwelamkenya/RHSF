@@ -66,7 +66,7 @@ fun ToolBar(
     TopAppBar(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 10.dp),
+            .padding(horizontal = 20.dp),
         title = {
             Row {
                 Spacer(modifier = Modifier.width(20.dp))

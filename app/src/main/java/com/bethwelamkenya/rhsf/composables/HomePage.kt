@@ -2,9 +2,12 @@ package com.bethwelamkenya.rhsf.composables
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,6 +26,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.OutlinedTextField
@@ -38,6 +42,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
@@ -465,18 +470,20 @@ fun HomeContent(context: Context) {
             Column(
                 modifier = Modifier
                     .weight(1F, true)
-                    .padding(10.dp)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
-                    .clickable {
-//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
-//                        activity.startActivity(intent)
-                    }
+                    .clip(RoundedCornerShape(20.dp))
+                    .padding(5.dp)
+                    .border(width = 1.dp, color = Color.Transparent, shape = RoundedCornerShape(20.dp))
+                    .shadow(elevation = 5.dp, shape = RoundedCornerShape(20.dp))
+                    .background(color = MaterialTheme.colorScheme.background)
+                    .clickable(enabled = false, onClick = {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+                        activity.startActivity(intent)
+                    })
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
+                Icon(
                     CustomIcon.Services,
                     contentDescription = "Services",
                     modifier = Modifier.size(50.dp)
@@ -486,16 +493,21 @@ fun HomeContent(context: Context) {
             Column(
                 modifier = Modifier
                     .weight(1F, true)
-                    .padding(10.dp)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
-                    .clickable { }
+                    .clip(RoundedCornerShape(20.dp))
+                    .padding(5.dp)
+                    .border(width = 1.dp, color = Color.Transparent, shape = RoundedCornerShape(20.dp))
+                    .shadow(elevation = 5.dp, shape = RoundedCornerShape(20.dp))
+                    .background(color = MaterialTheme.colorScheme.background)
+                    .clickable(enabled = false, onClick = {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+                        activity.startActivity(intent)
+                    })
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    CustomIcon.Contacts,
+                Icon(
+                    CustomIcon.User,
                     contentDescription = "Recordings",
                     modifier = Modifier.size(50.dp)
                 )
@@ -504,16 +516,21 @@ fun HomeContent(context: Context) {
             Column(
                 modifier = Modifier
                     .weight(1F, true)
-                    .padding(10.dp)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3F))
-                    .clickable { }
+                    .clip(RoundedCornerShape(20.dp))
+                    .padding(5.dp)
+                    .border(width = 1.dp, color = Color.Transparent, shape = RoundedCornerShape(20.dp))
+                    .shadow(elevation = 5.dp, shape = RoundedCornerShape(20.dp))
+                    .background(color = MaterialTheme.colorScheme.background)
+                    .clickable(enabled = false, onClick = {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+                        activity.startActivity(intent)
+                    })
                     .padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    CustomIcon.Contacts,
+                Icon(
+                    CustomIcon.User,
                     contentDescription = "Recordings",
                     modifier = Modifier.size(50.dp)
                 )

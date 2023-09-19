@@ -35,6 +35,7 @@ import com.bethwelamkenya.rhsf.icons.customicon.Duplicate
 import com.bethwelamkenya.rhsf.icons.customicon.Edit
 import com.bethwelamkenya.rhsf.icons.customicon.EditCalendar
 import com.bethwelamkenya.rhsf.icons.customicon.EditUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.Enter
 import com.bethwelamkenya.rhsf.icons.customicon.Exit
 import com.bethwelamkenya.rhsf.icons.customicon.Expand
 import com.bethwelamkenya.rhsf.icons.customicon.ExpandArrow
@@ -125,7 +126,7 @@ public val CustomIcon.AllIcons: ____KtList<ImageVector>
         Calendar, Check, CheckedUserMale, Checkmark, CircledMenu, CircledUserMale, ClearFilters,
         Collapse, CollapseArrow, Contacts, DatabaseExport, DatabaseRestore, DataBackup,
         DataConfiguration, DataProtection, DeleteDatabase, DeleteSign, Done, Dove, Duplicate, Edit,
-        EditCalendar, EditUserMale, Exit, Expand, ExpandArrow, Eye, Facebook, FacebookNew,
+        EditCalendar, EditUserMale, Enter, Exit, Expand, ExpandArrow, Eye, Facebook, FacebookNew,
         FilledChat, FilledFilter, FindUserMale, FontStyleFormatting, ForgotPassword, GenericSorting,
         GenericSorting2, Github, Gmail, Group, Help, Home, HomeFilled, Info, Information, Insert,
         Instagram, Invisible, Left4, LoginRoundedRight, LogoutRoundedLeft, Lowercase, Marker,

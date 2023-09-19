@@ -1,9 +1,8 @@
 package com.bethwelamkenya.rhsf.composables
 
+import android.app.Activity
 import android.content.Context
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,7 +16,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -34,7 +32,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -42,9 +39,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.bethwelamkenya.rhsf.MainActivity
 import com.bethwelamkenya.rhsf.icons.CustomIcon
-import com.bethwelamkenya.rhsf.icons.customicon.*
-import com.bethwelamkenya.rhsf.ui.theme.*
+import com.bethwelamkenya.rhsf.icons.customicon.CircledUserMale
+import com.bethwelamkenya.rhsf.icons.customicon.Enter
+import com.bethwelamkenya.rhsf.icons.customicon.Facebook
+import com.bethwelamkenya.rhsf.icons.customicon.FacebookNew
+import com.bethwelamkenya.rhsf.icons.customicon.GoogleLogo
+import com.bethwelamkenya.rhsf.icons.customicon.LoginRoundedRight
+import com.bethwelamkenya.rhsf.icons.customicon.Password
+import com.bethwelamkenya.rhsf.icons.customicon.User
+import com.bethwelamkenya.rhsf.ui.theme.TextBlack
 
 @Composable
 fun LogInPage(
@@ -56,7 +61,11 @@ fun LogInPage(
     var enabled by remember { mutableStateOf(false) }
     val focusRequester = remember { List(2) { FocusRequester() } }
     Box(modifier) {
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.tertiary) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+//            color = MaterialTheme.colorScheme.tertiary
+        ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 Row(
                     modifier = Modifier
@@ -101,11 +110,10 @@ fun LogInPage(
                         )
                     ) {
                         Image(
-                            CustomIcon.FacebookNew,
+                            CustomIcon.Facebook,
                             contentDescription = "Facebook",
                             modifier = Modifier
                                 .clip(RoundedCornerShape(10.dp))
-//                                .background(color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.75F))
                                 .padding(10.dp)
                                 .size(30.dp)
                         )
@@ -155,7 +163,8 @@ fun LogInPage(
                 .align(Alignment.Center)
                 .offset(y = (-50).dp),
             shape = RoundedCornerShape(60.dp),
-            color = MaterialTheme.colorScheme.tertiary,
+            color = MaterialTheme.colorScheme.background,
+//            color = MaterialTheme.colorScheme.tertiary,
             shadowElevation = 10.dp
         ) {
             Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
@@ -166,7 +175,7 @@ fun LogInPage(
                     color = MaterialTheme.colorScheme.primary
                 )
                 Spacer(modifier = Modifier.height(30.dp))
-                CustomTextField(
+                CustomInput(
                     context = context,
                     modifier = Modifier
                         .focusRequester(focusRequester[0])
@@ -183,7 +192,7 @@ fun LogInPage(
                     leadingIcon = CustomIcon.User
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-                CustomPasswordField(
+                CustomPassword(
                     context = context,
                     modifier = Modifier
                         .focusRequester(focusRequester[1])
@@ -214,12 +223,10 @@ fun LogInPage(
                 Spacer(modifier = Modifier.height(10.dp))
                 CustomButton(
                     context = context,
-                    modifier = Modifier.fillMaxWidth(0.5F)
-//                        .border(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5F), shape = RoundedCornerShape(10.dp))
-                    ,
+                    modifier = Modifier.fillMaxWidth(0.5F),
                     text = "Log In",
                     elevation = 5.dp,
-                    icon = CustomIcon.LoginRoundedRight,
+                    icon = CustomIcon.Enter,
                     onClick = { },
                     enabled = enabled
                 )
@@ -231,6 +238,7 @@ fun LogInPage(
 @Preview(name = "LogInPage")
 @Composable
 private fun PreviewLogInPage() {
-//    val context: Context =
-//    LogInPage(context)
+    val mainActivity: Activity = MainActivity()
+    val context = mainActivity as Context
+    LogInPage(context = context)
 }

@@ -5,9 +5,11 @@ import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -29,6 +31,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -56,53 +59,62 @@ fun DrawerContent(
     valueChanged: (Int) -> Unit
 ) {
     ModalDrawerSheet(
-        modifier = Modifier.fillMaxWidth(0.75F),
+        modifier = Modifier
+            .fillMaxWidth(0.75F)
+            .background(MaterialTheme.colorScheme.background),
         drawerShape = RoundedCornerShape(0.dp, 20.dp, 0.dp, 0.dp),
         drawerContainerColor = MaterialTheme.colorScheme.background,
         drawerTonalElevation = 10.dp
     ) {
-        DrawerHeader()
-        Spacer(modifier = Modifier.height(15.dp))
-        DrawerItem(
-            context = context,
-            drawerState = drawerState,
-            coroutineScope = coroutineScope,
-            text = "Home",
-            icon = CustomIcon.Home,
-            item = 1,
-            selectedItemId = activeNo,
-            onItemClick = valueChanged
-        )
-        DrawerItem(
-            context = context,
-            drawerState = drawerState,
-            coroutineScope = coroutineScope,
-            text = "Members",
-            icon = CustomIcon.Group,
-            item = 2,
-            selectedItemId = activeNo,
-            onItemClick = valueChanged
-        )
-        DrawerItem(
-            context = context,
-            drawerState = drawerState,
-            coroutineScope = coroutineScope,
-            text = "Attendances",
-            icon = CustomIcon.CheckedUserMale,
-            item = 3,
-            selectedItemId = activeNo,
-            onItemClick = valueChanged
-        )
-        DrawerItem(
-            context = context,
-            drawerState = drawerState,
-            coroutineScope = coroutineScope,
-            text = "Services",
-            icon = CustomIcon.Services,
-            item = 4,
-            selectedItemId = activeNo,
-            onItemClick = valueChanged
-        )
+        Column (
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .background(MaterialTheme.colorScheme.background),
+        ) {
+            DrawerHeader()
+            Spacer(modifier = Modifier.height(15.dp))
+            DrawerItem(
+                context = context,
+                drawerState = drawerState,
+                coroutineScope = coroutineScope,
+                text = "Home",
+                icon = CustomIcon.Home,
+                item = 1,
+                selectedItemId = activeNo,
+                onItemClick = valueChanged
+            )
+            DrawerItem(
+                context = context,
+                drawerState = drawerState,
+                coroutineScope = coroutineScope,
+                text = "Members",
+                icon = CustomIcon.Group,
+                item = 2,
+                selectedItemId = activeNo,
+                onItemClick = valueChanged
+            )
+            DrawerItem(
+                context = context,
+                drawerState = drawerState,
+                coroutineScope = coroutineScope,
+                text = "Attendances",
+                icon = CustomIcon.CheckedUserMale,
+                item = 3,
+                selectedItemId = activeNo,
+                onItemClick = valueChanged
+            )
+            DrawerItem(
+                context = context,
+                drawerState = drawerState,
+                coroutineScope = coroutineScope,
+                text = "Services",
+                icon = CustomIcon.Services,
+                item = 4,
+                selectedItemId = activeNo,
+                onItemClick = valueChanged
+            )
+        }
     }
 }
 
@@ -112,9 +124,12 @@ fun DrawerHeader() {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(0.18F)
-            .background(color = MaterialTheme.colorScheme.background)
-//            .background(color = MaterialTheme.colorScheme.primary.copy(alpha = 0.6F))
-            .padding(horizontal = 15.dp),
+//            .clip(RoundedCornerShape(20.dp))
+//            .padding(horizontal = 5.dp)
+//            .border(width = 1.dp, color = Color.Transparent, shape = RoundedCornerShape(20.dp))
+            .shadow(elevation = 5.dp, shape = RoundedCornerShape(bottomEnd = 20.dp, bottomStart = 20.dp))
+            .background(color = MaterialTheme.colorScheme.background),
+//            .padding(horizontal = 15.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -149,7 +164,7 @@ fun DrawerItem(
     onItemClick: (Int) -> Unit
 ) {
     val backgroundColor =
-        if (item == selectedItemId) MaterialTheme.colorScheme.primary else Color.Transparent
+        if (item == selectedItemId) MaterialTheme.colorScheme.primary.copy(alpha = 0.6F) else Color.Transparent
     Row(
         modifier = Modifier
             .padding(end = 20.dp, top = 5.dp, bottom = 5.dp)

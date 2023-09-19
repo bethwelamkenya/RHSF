@@ -1,5 +1,7 @@
 package com.bethwelamkenya.rhsf
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -36,59 +38,68 @@ class MainActivity : ComponentActivity() {
             val window = this.window
 //            window.statusBarColor = 0xCBA6F0
             window.statusBarColor = if (darkTheme) 0XFFFFFF else 0X333333
-            RHSFTheme (darkTheme = darkTheme) {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    val activeNo = remember { mutableStateOf(1) }
-                    val coroutineScope = rememberCoroutineScope()
-                    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-                    ModalNavigationDrawer(
-                        drawerContent = {
-                            DrawerContent(
-                                context = this,
-                                drawerState = drawerState,
-                                coroutineScope = coroutineScope,
-                                activeNo = activeNo.value,
-                                valueChanged = {
-                                    activeNo.value = it
-                                }
-                            )
-                        },
-                        drawerState = drawerState
-                    ) {
-                        Scaffold(
-                            modifier = Modifier.fillMaxSize(),
-                            containerColor = MaterialTheme.colorScheme.background,
-//                            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
-                            topBar = { ToolBar(context = this, drawerState = drawerState, coroutineScope = coroutineScope) }
-                        ) {
-                            val pad = it
-        //                    LogInPage(context = this)
-                            HomePage(context = this)
-        //                    Greeting("Android")
-                        }
-
-                    }
-                }
+            RHSFTheme(darkTheme = darkTheme) {
+                Greeting(this, "Android")
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Greeting(
+    context: Context,
+    name: String,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        val activeNo = remember { mutableStateOf(1) }
+        val coroutineScope = rememberCoroutineScope()
+        val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+        ModalNavigationDrawer(
+            drawerContent = {
+                DrawerContent(
+                    context = context,
+                    drawerState = drawerState,
+                    coroutineScope = coroutineScope,
+                    activeNo = activeNo.value,
+                    valueChanged = {
+                        activeNo.value = it
+                    }
+                )
+            },
+            drawerState = drawerState
+        ) {
+            Scaffold(
+                modifier = Modifier.fillMaxSize(),
+                containerColor = MaterialTheme.colorScheme.background,
+//                            containerColor = MaterialTheme.colorScheme.tertiary.copy(0.25F),
+                topBar = {
+                    ToolBar(
+                        context = context,
+                        drawerState = drawerState,
+                        coroutineScope = coroutineScope
+                    )
+                }
+            ) {
+                val pad = it
+                //                    LogInPage(context = this)
+                HomePage(context = context)
+                //                    Greeting("Android")
+            }
+
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
+    val mainActivity: Activity = MainActivity()
+    val context = mainActivity as Context
     RHSFTheme {
-        Greeting("Android")
+        Greeting(context, "Android")
     }
 }
