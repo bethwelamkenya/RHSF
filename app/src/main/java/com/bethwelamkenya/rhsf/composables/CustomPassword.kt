@@ -59,14 +59,7 @@ fun CustomPassword(
     val containerColor = MaterialTheme.colorScheme.background
     var finalValue by remember { mutableStateOf(value) }
     var iconPath by remember { mutableStateOf(CustomIcon.Eye) }
-    var visibility by remember {
-        mutableStateOf(VisualTransformation {
-            TransformedText(
-                AnnotatedString('\u2022'.toString().repeat(finalValue.length)),
-                OffsetMapping.Identity
-            )
-        })
-    }
+    var visible by remember { mutableStateOf(false) }
     OutlinedTextField(
         modifier = modifier
             .padding(5.dp)
@@ -95,7 +88,7 @@ fun CustomPassword(
         keyboardActions = keyboardActions,
         enabled = enabled,
         readOnly = readOnly,
-        visualTransformation = visibility,
+        visualTransformation = if (visible) VisualTransformation.None else PasswordVisualTransformation(),
         leadingIcon = {
             if (leadingIcon != null) Icon(
                 leadingIcon, contentDescription = text,
@@ -111,11 +104,11 @@ fun CustomPassword(
                     .size(28.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .clickable(enabled = finalValue.isNotEmpty(), onClick = {
-                        if (visibility == VisualTransformation.None) {
-                            visibility = PasswordVisualTransformation()
+                        if (visible) {
+                            visible = false
                             iconPath = CustomIcon.Eye
                         } else {
-                            visibility = VisualTransformation.None
+                            visible = true
                             iconPath = CustomIcon.Invisible
                         }
                     })

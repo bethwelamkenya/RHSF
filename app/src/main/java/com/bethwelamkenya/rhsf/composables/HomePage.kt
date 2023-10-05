@@ -461,7 +461,7 @@ fun HomeContent(context: Context) {
     var userName by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.padding(top = 55.dp)) {
+    Column(modifier = Modifier.padding(top = 60.dp)) {
         Row(
             modifier = Modifier,
             horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
